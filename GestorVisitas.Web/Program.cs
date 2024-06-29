@@ -1,7 +1,15 @@
+using GestorVisita.Data.Context;
+using GestorVisita.Data.Daos;
+using GestorVisita.Data.Interface;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<GV_Context>(o => o.UseInMemoryDatabase("Gestor_Visita"));
+builder.Services.AddScoped<IDaoVisita, DaoVisita>();
 builder.Services.AddControllersWithViews();
+
 
 var app = builder.Build();
 
