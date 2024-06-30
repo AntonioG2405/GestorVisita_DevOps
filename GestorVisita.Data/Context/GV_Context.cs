@@ -17,5 +17,6 @@ namespace GestorVisita.Data.Context
         }
 
         public DbSet<Visita> Visitas { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
     }
 }

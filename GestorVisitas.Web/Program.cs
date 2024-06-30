@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<GV_Context>(o => o.UseInMemoryDatabase("Gestor_Visita"));
 builder.Services.AddScoped<IDaoVisita, DaoVisita>();
+builder.Services.AddScoped<IDaoUsuario, DaoUsuarios>();
 builder.Services.AddControllersWithViews();
 
 
