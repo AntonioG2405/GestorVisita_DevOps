@@ -1,12 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+
+using GestorVisita.Data.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace GestorVisita.Data.Context
 {
-    internal class GV_Context
+    public class GV_Context : DbContext
     {
+        public GV_Context(DbContextOptions<GV_Context> options) : base(options)
+        {
+        }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            base.OnConfiguring(optionsBuilder);
+            optionsBuilder.UseInMemoryDatabase("Gestor_Visita");
+        }
+
+        public DbSet<Visita> Visitas { get; set; }
+        public DbSet<Usuarios> Usuarios { get; set; }
     }
 }
