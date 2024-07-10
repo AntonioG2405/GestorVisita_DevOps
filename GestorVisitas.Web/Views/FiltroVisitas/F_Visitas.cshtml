@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GestorVisita.Data.Entities.FiltroVisitas>
+
+
+@{
+    ViewData["Title"] = "Filtros de Visitas";
+    ViewBag.Title = "Visitas";
+}
+
+
+<h2>Filtro de Visitas</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Fecha</th>
+            <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var FiltroVisitas in Model)
+        {
+            <tr>
+                <td>@FiltroVisitas.Nombre</td>
+                <td>@FiltroVisitas.Fecha.ToString("dd/MM/yyyy")</td>
+                <td>@FiltroVisitas.Detalles</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form action="@Url.Action("FiltrarPorFecha", "Visitas")" method="get">
+    <div class="form-group">
+        <label for="fecha">Filtrar por Fecha:</label>
+        <input type="date" id="fecha" name="fecha" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Filtrar</button>
+</form>
