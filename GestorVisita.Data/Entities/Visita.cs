@@ -8,9 +8,9 @@ namespace GestorVisita.Data.Entities
     {
 
         public int Id { get; set; }
-        public string NombreVisitante { get; set; }
-        public string MotivoVisita { get; set; }
-        public string Observaciones { get; set; }
+        public string? NombreVisitante { get; set; }
+        public string? MotivoVisita { get; set; }
+        public string? Observaciones { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
     }
 }

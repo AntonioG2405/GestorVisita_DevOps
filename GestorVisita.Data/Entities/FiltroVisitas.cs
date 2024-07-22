@@ -9,8 +9,8 @@ namespace GestorVisita.Data.Entities
     public class FiltroVisitas
     {
         public int Id { get; set; }
-        public string Nombre { get; set; }
+        public string? Nombre { get; set; }
         public DateTime Fecha { get; set; } = DateTime.Now;
-        public string Detalles { get; set; }
+        public string? Detalles { get; set; }
     }
 }
